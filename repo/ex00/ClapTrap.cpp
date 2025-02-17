@@ -94,5 +94,3 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " remaining energy points : " << _energyPoints << std::endl;
 	}
 }
-
-
