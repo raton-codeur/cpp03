@@ -44,9 +44,9 @@ ClapTrap::~ClapTrap()
 void ClapTrap::attack(const std::string& target)
 {
 	if (_hitPoints == 0)
-		std::cout << "ClapTrap " << _name << " tries to attack " << target << " but is dead" << std::endl;
+		std::cout << "ClapTrap " << _name << " tries to attack " << target << " but " << _name << " is dead" << std::endl;
 	else if (_energyPoints == 0)
-		std::cout << "ClapTrap " << _name << " tries to attack " << target << " but it has no energy points left" << std::endl;
+		std::cout << "ClapTrap " << _name << " tries to attack " << target << " but " << _name << " has no energy points left" << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << _name << " attacks " << target << " with " << _attackDamage << " points of damage" << std::endl;
@@ -58,10 +58,10 @@ void ClapTrap::attack(const std::string& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hitPoints == 0)
-		std::cout << "ClapTrap " << _name << " takes damage but it's already dead" << std::endl;
+		std::cout << "ClapTrap " << _name << " takes damage but " << _name << " is already dead" << std::endl;
 	else
 	{
-		if (amount <= _hitPoints)
+		if (amount < _hitPoints)
 		{
 			std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage" << std::endl;
 			_hitPoints -= amount;
@@ -69,7 +69,10 @@ void ClapTrap::takeDamage(unsigned int amount)
 		}
 		else
 		{
-			std::cout << "ClapTrap " << _name << " takes " << _hitPoints << " (out of " << amount << ") points of damage" << std::endl;
+			if (amount == _hitPoints)
+				std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage" << std::endl;
+			else
+				std::cout << "ClapTrap " << _name << " takes " << _hitPoints << " (out of " << amount << ") points of damage" << std::endl;
 			_hitPoints = 0;
 			std::cout << "ClapTrap " << _name << " is dead" << std::endl;
 		}
@@ -79,9 +82,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_hitPoints == 0)
-		std::cout << "ClapTrap " << _name << " tries to repair itself but it's dead" << std::endl;
+		std::cout << "ClapTrap " << _name << " tries to repair itself but " << _name << " is dead" << std::endl;
 	else if (_energyPoints == 0)
-		std::cout << "ClapTrap " << _name << " tries to repair itself but it has no energy points left" << std::endl;
+		std::cout << "ClapTrap " << _name << " tries to repair itself but " << _name << " has no energy points left" << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << _name << " repairs itself, recovering " << amount << "hit points" << std::endl;

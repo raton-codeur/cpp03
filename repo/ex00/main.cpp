@@ -45,4 +45,25 @@ int main()
 		ClapTrap c("michael");
 		c.takeDamage(10);
 	}
+
+	std::cout << "--- beRepaired tests ---" << std::endl;
+	{
+		ClapTrap c("ken");
+		c.beRepaired(3);
+		c.beRepaired(4);
+		c.beRepaired(6);
+		c.beRepaired(1);
+		c.beRepaired(1);
+		c.beRepaired(2);
+		c.beRepaired(7);
+		c.beRepaired(0);
+		c.beRepaired(3);
+		c.beRepaired(9);
+		c.beRepaired(5);
+	}
+	{
+		ClapTrap c("david");
+		c.takeDamage(100);
+		c.beRepaired(1);
+	}
 }
