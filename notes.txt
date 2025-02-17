@@ -246,20 +246,42 @@ pour faire un message de log simple. ça affiche la fonction qui est appelée
 
 
 -
-constructeur à partir d'un float : roundf(f * (1 << _fractionalBits))
+construire un nombre a virgule fixe
+
+
+a partir dun entier c'est facile, on decale les bits a gauche avec <<
+
+
+pour un flottant f le constructeur est : roundf(f * (1 << _fractionalBits))
+
+explications :
+
+decaler un nombre de 3 bits a gauche ca revient a le multiplier par 2 puissance 3
+
+or, 2 puissance 3 = 1 << 3
+
+si la multiplication ne tombe pas juste, et comme on ne garde que la partie entiere du resultat, la representation en virgule fixe sera une approximation du nombre
+ 
 
 pourquoi arrondir ?
-
 exemple :
 
 on a 2 bits pour la partie fractionnaire et qu'on veut représenter 1.9
 
-(1 << 2) = 4
+(1 << 2) = 2 ^ 2 = 4
 
 1.9 * 4 = 7.6
 
-si on arrondi pas, on va coder le nombre par 1|11
-et si on arrondi, on va coder le nombre par 10|00
+si on arrondi pas, on va coder le nombre par _rawValue = 7 ---->  1|11
+on a : 1,11 en base 2 = 1.75
 
-or, 1,11 = 1.75 et 10,0 = 2
+et si on arrondi, on va coder le nombre par _rawValue = 8  ----> 10|00
+on a : 10,0 en base 2 = 2
 -
+
+
+
+caster un double d en float :
+static_cast<float>(d)
+
+
