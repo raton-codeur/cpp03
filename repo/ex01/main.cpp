@@ -1,5 +1,11 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main() {
-	std::cout << "test" << std::endl;
+int main()
+{
+	ScavTrap s("marvin");
+	s.attack("target");
+	s.takeDamage(10);
+	s.beRepaired(5);
+	s.guardGate();
+	s.guardGate();
 }
