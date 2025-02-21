@@ -10,23 +10,23 @@ int main()
 		ClapTrap ct4;
 		ct4 = ct3;
 	}
-	
 	std::cout << "--- tests 2 ---" << std::endl;
 	{
 		ClapTrap c("louis");
 		c.attack("john");
-		c.takeDamage(6);
 		c.beRepaired(3);
 		c.attack("john");
 		c.beRepaired(5);
+		c.beRepaired(6);
 		c.attack("john");
 		c.attack("john");
 		c.attack("john");
 		c.attack("john");
 		c.attack("john");
 		c.attack("david");
+		c.beRepaired(8);
+		c.takeDamage(6);
 	}
-
 	std::cout << "--- tests 3 ---" << std::endl;
 	{
 		ClapTrap c("marc");
