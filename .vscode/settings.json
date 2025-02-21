@@ -65,6 +65,12 @@
 		"random": "cpp",
 		"utility": "cpp",
 		"stop_token": "cpp",
-		"thread": "cpp"
+		"thread": "cpp",
+		"cmath": "cpp",
+		"deque": "cpp",
+		"numeric": "cpp",
+		"optional": "cpp",
+		"ranges": "cpp",
+		"span": "cpp"
 	}
 }
