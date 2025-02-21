@@ -4,8 +4,6 @@
 
 class ScavTrap : public ClapTrap
 {
-	private :
-		bool _isInGateKeeperMode;
 	public :
 				ScavTrap();
 				ScavTrap(const std::string& name);

@@ -10,10 +10,12 @@ int main()
 		ScavTrap st4;
 		st4 = st3;
 	}
-	// ScavTrap s("marvin");
-	// s.attack("target");
-	// s.takeDamage(10);
-	// s.beRepaired(5);
-	// s.guardGate();
-	// s.guardGate();
+	std::cout << "--- tests 2 ---" << std::endl;
+	{
+		ScavTrap s("john");
+		s.attack("david");
+		s.takeDamage(30);
+		s.beRepaired(10);
+		s.guardGate();
+	}
 }
