@@ -280,8 +280,16 @@ on a : 10,0 en base 2 = 2
 -
 
 
-
+-
 caster un double d en float :
 static_cast<float>(d)
+-
 
 
+-
+flag de compilation -Wshadow et -Wno-shadow
+
+activer / désactiver l'avertissement de shadowing
+
+c'est quand une variable locale masque une variable de la même portée ou d'une portée plus large
+-
