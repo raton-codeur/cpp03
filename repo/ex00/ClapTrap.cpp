@@ -85,10 +85,20 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " tries to repair itself (" << amount << " points) but " << _name << " is dead" << std::endl;
 	else if (_energyPoints == 0)
 		std::cout << "ClapTrap " << _name << " tries to repair itself (" << amount << " points) but " << _name << " has no energy points left" << std::endl;
+	else if (_hitPoints == 10)
+		std::cout << "ClapTrap " << _name << " tries to repair itself (" << amount << " points) but " << _name << " isn't damaged" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << _name << " repairs itself, recovering " << amount << " hit points" << std::endl;
-		_hitPoints += amount;
+		if (amount + _hitPoints > 10)
+		{
+			std::cout << "ClapTrap " << _name << " repairs itself, recovering " << 10 - _hitPoints << " (out of " << amount << ") hit points" << std::endl;
+			_hitPoints = 10;
+		}
+		else
+		{
+			std::cout << "ClapTrap " << _name << " repairs itself, recovering " << amount << " hit points" << std::endl;
+			_hitPoints += amount;
+		}
 		std::cout << "ClapTrap " << _name << " remaining hit points : " << _hitPoints << std::endl;
 		_energyPoints--;
 		std::cout << "ClapTrap " << _name << " remaining energy points : " << _energyPoints << std::endl;

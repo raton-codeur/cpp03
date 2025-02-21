@@ -50,16 +50,20 @@ int main()
 	{
 		ClapTrap c("ken");
 		c.beRepaired(3);
+		c.takeDamage(6);
 		c.beRepaired(4);
 		c.beRepaired(6);
-		c.beRepaired(1);
-		c.beRepaired(1);
-		c.beRepaired(2);
-		c.beRepaired(7);
-		c.beRepaired(0);
+		c.takeDamage(3);
 		c.beRepaired(3);
-		c.beRepaired(9);
-		c.beRepaired(5);
+		c.attack("john");
+		c.attack("john");
+		c.attack("john");
+		c.attack("john");
+		c.attack("john");
+		c.attack("john");
+		c.attack("john");
+		c.takeDamage(1);
+		c.beRepaired(4);
 	}
 	{
 		ClapTrap c("david");
