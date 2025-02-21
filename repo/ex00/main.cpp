@@ -9,7 +9,6 @@ int main()
 		ClapTrap ct3(ct2);
 		ClapTrap ct4;
 		ct4 = ct3;
-		ct4.takeDamage(1);
 	}
 	
 	std::cout << "--- attack tests ---" << std::endl;
