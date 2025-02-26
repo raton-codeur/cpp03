@@ -17,6 +17,7 @@ int main()
 	std::cout << "--- tests 2 ---" << std::endl;
 	{
 		DiamondTrap d("john");
+		d.whoAmI();
 		d.attack("target");
 		d.takeDamage(10);
 		d.beRepaired(5);
