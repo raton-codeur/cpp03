@@ -27,7 +27,4 @@ fclean : clean
 
 re : fclean all
 
-test : re
-	@ ./$(NAME)
-
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

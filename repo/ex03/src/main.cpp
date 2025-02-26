@@ -7,6 +7,8 @@ int main()
 		DiamondTrap dt1;
 		dt1.whoAmI();
 		dt1.printAttributes();
+		dt1.beRepaired(5);
+		dt1.printAttributes();
 		DiamondTrap dt2("bob");
 		dt2.whoAmI();
 		dt2.printAttributes();

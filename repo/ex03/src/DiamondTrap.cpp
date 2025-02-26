@@ -4,7 +4,8 @@ DiamondTrap::DiamondTrap() : _name(ClapTrap::_name)
 {
 	std::cout << "DiamondTrap : default constructor called" << std::endl;
 	ClapTrap::_name = _name + "_clap_name";
-	_energyPoints = ScavTrap::_energyPoints;
+	ScavTrap tmp;
+	_energyPoints = tmp.getEnergyPoints();
 }
 
 DiamondTrap::DiamondTrap(const std::string& name) :
@@ -14,7 +15,8 @@ DiamondTrap::DiamondTrap(const std::string& name) :
 	_name(name)
 {
 	std::cout << "DiamondTrap " << _name << " : constructor called" << std::endl;
-	_energyPoints = ScavTrap::_energyPoints;
+	ScavTrap tmp;
+	_energyPoints = tmp.getEnergyPoints();
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& diamondTrap) :
@@ -24,7 +26,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& diamondTrap) :
 	_name(diamondTrap._name)
 {
 	std::cout << "DiamondTrap " << _name << " : copy constructor called" << std::endl;
-	_energyPoints = diamondTrap.ScavTrap::_energyPoints;
+	_energyPoints = diamondTrap._energyPoints;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& diamondTrap)

@@ -4,16 +4,15 @@
 
 class ScavTrap : virtual public ClapTrap
 {
-	protected :
-		unsigned int _energyPoints;
 	public :
-					ScavTrap();
-					ScavTrap(const std::string& name);
-					ScavTrap(const ScavTrap& scavTrap);
-		ScavTrap&	operator=(const ScavTrap& scavTrap);
-					~ScavTrap();
-		void		attack(const std::string& target);
-		void		guardGate();
+						ScavTrap();
+						ScavTrap(const std::string& name);
+						ScavTrap(const ScavTrap& scavTrap);
+		ScavTrap&		operator=(const ScavTrap& scavTrap);
+						~ScavTrap();
+		void			attack(const std::string& target);
+		void			guardGate();
+		unsigned int	getEnergyPoints() const;
 };
 
 #endif
