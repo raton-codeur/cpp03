@@ -6,17 +6,17 @@ int main()
 	{
 		DiamondTrap dt1;
 		dt1.whoAmI();
-		dt1.checkAttributes();
+		dt1.printAttributes();
 		DiamondTrap dt2("bob");
 		dt2.whoAmI();
-		dt2.checkAttributes();
+		dt2.printAttributes();
 		DiamondTrap dt3(dt2);
 		dt3.whoAmI();
-		dt3.checkAttributes();
+		dt3.printAttributes();
 		DiamondTrap dt4;
 		dt4 = dt3;
 		dt4.whoAmI();
-		dt4.checkAttributes();
+		dt4.printAttributes();
 	}
 	std::cout << "--- tests 2 ---" << std::endl;
 	{

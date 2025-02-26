@@ -45,7 +45,7 @@ void DiamondTrap::whoAmI() const
 	std::cout << "ClapTrap::_name : " << ClapTrap::_name << std::endl;
 }
 
-void DiamondTrap::checkAttributes() const
+void DiamondTrap::printAttributes() const
 {
 	std::cout << "_hitPoints : " << _hitPoints << std::endl;
 	std::cout << "_energyPoints : " << _energyPoints<< std::endl;

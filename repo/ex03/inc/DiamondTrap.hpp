@@ -14,7 +14,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap&	operator=(const DiamondTrap& diamondTrap);
 						~DiamondTrap();
 		void			whoAmI() const;
-		void			checkAttributes() const;
+		void			printAttributes() const;
 };
 
 #endif
