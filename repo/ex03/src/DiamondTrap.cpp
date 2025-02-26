@@ -4,9 +4,7 @@ DiamondTrap::DiamondTrap() : _name(ClapTrap::_name)
 {
 	std::cout << "DiamondTrap : default constructor called" << std::endl;
 	ClapTrap::_name = _name + "_clap_name";
-	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap(const std::string& name) :
@@ -16,9 +14,7 @@ DiamondTrap::DiamondTrap(const std::string& name) :
 	_name(name)
 {
 	std::cout << "DiamondTrap " << _name << " : constructor called" << std::endl;
-	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& diamondTrap) :
@@ -27,7 +23,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap& diamondTrap) :
 	FragTrap(diamondTrap),
 	_name(diamondTrap._name)
 {
-	std::cout << "DiamondTrap " << _name << " : copy constructor called" << std::endl;	
+	std::cout << "DiamondTrap " << _name << " : copy constructor called" << std::endl;
+	_energyPoints = diamondTrap.ScavTrap::_energyPoints;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& diamondTrap)
@@ -42,11 +39,15 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap " << _name << " : destructor called" << std::endl;
 }
 
-void DiamondTrap::whoAmI()
+void DiamondTrap::whoAmI() const
 {
 	std::cout << "DiamondTrap::_name : " << _name << std::endl;
 	std::cout << "ClapTrap::_name : " << ClapTrap::_name << std::endl;
-	std::cout << "hp : " << _hitPoints << std::endl;
-	std::cout << "ep : " << _energyPoints<< std::endl;
-	std::cout << "ad : " << _attackDamage << std::endl;
+}
+
+void DiamondTrap::checkAttributes() const
+{
+	std::cout << "_hitPoints : " << _hitPoints << std::endl;
+	std::cout << "_energyPoints : " << _energyPoints<< std::endl;
+	std::cout << "_attackDamage : " << _attackDamage << std::endl;
 }

@@ -13,7 +13,8 @@ class DiamondTrap : public ScavTrap, public FragTrap
 						DiamondTrap(const DiamondTrap& diamondTrap);
 		DiamondTrap&	operator=(const DiamondTrap& diamondTrap);
 						~DiamondTrap();
-		void			whoAmI();
+		void			whoAmI() const;
+		void			checkAttributes() const;
 };
 
 #endif
